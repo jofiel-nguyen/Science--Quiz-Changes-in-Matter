@@ -3,66 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEK 8.6 Science Bingo</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #2c3e50; color: white; text-align: center; }
-        h1 { color: #f1c40f; text-shadow: 2px 2px #c0392b; }
-        .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 500px; margin: 20px auto; padding: 10px; background: #34495e; border-radius: 10px; }
-        .cell { aspect-ratio: 1/1; background: #ecf0f1; color: #2c3e50; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; border-radius: 5px; cursor: pointer; padding: 5px; transition: 0.3s; }
-        .cell:hover { background: #bdc3c7; }
-        .cell.marked { background: #27ae60; color: white; transform: scale(0.95); }
-        .free { background: #e74c3c !important; color: white !important; }
-        .controls { margin-top: 20px; }
-        button { padding: 10px 20px; font-size: 1rem; cursor: pointer; background: #f1c40f; border: none; border-radius: 5px; font-weight: bold; }
-    </style>
+    <title>Science Quiz: Changes in Matter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>TEK 8.6 BINGO</h1>
-    <p>Solve a problem, then click the answer square!</p>
-
-    <div class="grid" id="bingo-board">
+    <div class="quiz-container">
+        <h1>Physical vs. Chemical Change</h1>
+        <p>Look at the image below. What type of change is it?</p>
+        
+        <div class="image-frame">
+            <img id="change-image" src="" alt="Loading image...">
         </div>
 
-    <div class="controls">
-        <button onclick="generateBoard()">New Random Board</button>
+        <div class="button-group">
+            <button onclick="checkAnswer('physical')">Physical Change</button>
+            <button onclick="checkAnswer('chemical')">Chemical Change</button>
+        </div>
+
+        <p id="feedback"></p>
+        <button id="next-btn" onclick="loadQuestion()" style="display:none;">Next Question →</button>
     </div>
 
-    <script>
-        const answers = [
-            "10g", "15g", "50g", "100g", "22g", "5g", "8g", "25g", 
-            "2 atoms", "4 atoms", "6 atoms", "12 atoms", "16 atoms",
-            "Balanced", "Unbalanced", "Reactant", "Product", "Yields", 
-            "Subscript", "Coefficient", "Closed System", "Open System", 
-            "Gas Escaped", "Law of Conservation", "Matter"
-        ];
-
-        function generateBoard() {
-            const board = document.getElementById('bingo-board');
-            board.innerHTML = ''; // Clear board
-            
-            // Shuffle the answers
-            let shuffled = answers.sort(() => 0.5 - Math.random());
-            
-            for (let i = 0; i < 25; i++) {
-                let cell = document.createElement('div');
-                cell.className = 'cell';
-                
-                if (i === 12) {
-                    cell.innerText = "FREE SPACE";
-                    cell.classList.add('free', 'marked');
-                } else {
-                    cell.innerText = shuffled[i];
-                    cell.onclick = function() {
-                        this.classList.toggle('marked');
-                    };
-                }
-                board.appendChild(cell);
-            }
-        }
-
-        // Initialize on load
-        generateBoard();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
