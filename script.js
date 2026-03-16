@@ -1,16 +1,16 @@
 const questions = [
     {
-        image: "https://images.unsplash.com/photo-1516339901600-2e3a8ad0f1d5?w=500", // Ice melting
+        image: "https://www.sciencing.com/sciencing/ice-cubes-melting-process-5415212/be7b04f8385c4adfa1b458a1987ce567.jpg", // Ice melting
         answer: "physical",
         desc: "Correct! Melting ice is a physical change because it's still water."
     },
     {
-        image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=500", // Fire/Burning
+        image: "https://rocketfiretorch.com/cdn/shop/articles/Tips_on_How_to_Keep_a_Fire_Burning_Longer-6119230.png?v=1758314909", // Fire/Burning
         answer: "chemical",
         desc: "Correct! Burning wood creates ash and smoke—new substances!"
     },
     {
-        image: "https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?w=500", // Rusty metal
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCkkwQlee8zyRHMgdJIaBpcFIsrUQBlnyDQ&s", // Rusty metal
         answer: "chemical",
         desc: "Correct! Rust is a chemical reaction between iron and oxygen."
     }
